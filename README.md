@@ -31,6 +31,6 @@ For examples, hook `qemu-img` (>= **6.0**) converting source image to zstd compr
 cd zstd-hook
 LD_LIBRARY_PATH=. LD_PRELOAD=libzstdhook.so \
   ZSTD_CLEVEL=22 ZSTD_LDM=1 ZSTD_STRATEGY=9 \
-  ZSTD_THREADS=`grep -c '^processor' /proc/cpuinfo` \
+  ZSTD_THREADS=$( grep -c '^processor' /proc/cpuinfo ) \
   qemu-img convert -c -o compression_type=zstd -O qcow2 <origin-image> <compressed-qcow2>
 ```
