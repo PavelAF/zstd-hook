@@ -18,10 +18,12 @@ make
 
 Set the following environment variables:
 
-* `ZSTD_CLEVEL` : the zstd compression level between `1` and `22`
-* `ZSTD_NBTHREADS` : the zstd compression threads
 * `LD_PRELOAD` : the hook library `libzstdhook.so`
 * `LD_LIBRARY_PATH` : the directory for the hook library `libzstdhook.so`
+* `ZSTD_CLEVEL` : the zstd compression level between `1` and `22`
+* `ZSTD_THREADS` : the zstd compression threads
+* `ZSTD_STRATEGY` : the zstd strategy, between `1` and `9`
+* `ZSTD_LD=1` : enable LongDistanceMatching
 
 For examples, hook `qemu-img` (>= **6.0**) converting source image to zstd compressed `qcow2` image by compression level `22` and the **maximum** compression threads on Ubuntu 22.04:
 
