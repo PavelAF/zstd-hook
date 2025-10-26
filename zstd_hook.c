@@ -72,11 +72,25 @@ DLL_Export ZSTD_CCtx* ZSTD_createCCtx(void)
             orig_ZSTD_CCtx_setParameter(cctx, ZSTD_c_compressionLevel, level);
     }
 
-    v = getenv("ZSTD_NBTHREADS");
+    v = getenv("ZSTD_THREADS");
     if (v && *v) {
         const int workers = atoi(v);
         if (workers > 0)
             orig_ZSTD_CCtx_setParameter(cctx, ZSTD_c_nbWorkers, workers);
+    }
+
+    v = getenv("ZSTD_LDM");
+    if (v && *v) {
+        const int ldm = atoi(v);
+        if (ldm > 0)
+            orig_ZSTD_CCtx_setParameter(cctx, ZSTD_c_enableLongDistanceMatching, 1);
+    }
+
+    v = getenv("ZSTD_STRATEGY");
+    if (v && *v) {
+        const int strategy = atoi(v);
+        if (strategy > 0 && strategy < 10)
+            orig_ZSTD_CCtx_setParameter(cctx, ZSTD_c_strategy, strategy);
     }
 
     return cctx;
