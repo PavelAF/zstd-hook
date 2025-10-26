@@ -7,6 +7,8 @@
 typedef enum {
     ZSTD_c_compressionLevel = 100,
     ZSTD_c_nbWorkers = 400,
+    ZSTD_c_enableLongDistanceMatching = 160,
+    ZSTD_c_strategy = 107,
 } ZSTD_cParameter;
 
 enum {
