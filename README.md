@@ -25,7 +25,7 @@ Set the following environment variables:
 * `ZSTD_STRATEGY` : the zstd strategy, between `1` and `9`
 * `ZSTD_LDM=1` : enable LongDistanceMatching
 
-For examples, hook `qemu-img` (>= **6.0**) converting source image to zstd compressed `qcow2` image by compression level `22` and the **maximum** compression threads on Ubuntu 22.04:
+For examples, hook `qemu-img` (>= **6.0**) converting source image to zstd compressed `qcow2` image by compression level `22` and the **maximum** compression threads:
 
 ```shell
 cd zstd-hook
