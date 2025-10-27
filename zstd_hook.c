@@ -8,7 +8,14 @@ typedef enum {
     ZSTD_c_compressionLevel = 100,
     ZSTD_c_nbWorkers = 400,
     ZSTD_c_enableLongDistanceMatching = 160,
-    ZSTD_c_strategy = 107,
+    ZSTD_c_strategy    = 107,
+    ZSTD_c_windowLog   = 101,
+    ZSTD_c_chainLog    = 103,
+    ZSTD_c_searchLog   = 104,
+    ZSTD_c_overlapLog  = 402,
+    ZSTD_c_ldmHashLog  = 161,
+    ZSTD_c_ldmMinMatch = 162,
+    ZSTD_c_jobSize     = 401,
 } ZSTD_cParameter;
 
 enum {
